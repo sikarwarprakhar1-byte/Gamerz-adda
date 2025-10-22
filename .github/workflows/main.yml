@@ -1,9 +1,11 @@
+
+
 name: Flutter Build APK
 
 on:
   push:
     branches:
-      - main # Yahan 'main' branch ka naam hai
+      - main 
 
 jobs:
   build:
@@ -17,7 +19,6 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          # Aapke Flutter environment ke liye zaroori version
           flutter-version: '3.16.5' 
 
       - name: Get packages
@@ -27,7 +28,6 @@ jobs:
         run: flutter build apk --release
 
       - name: Upload artifact
-        # ZAROORI FIX: V3 ko V4 se badal diya gaya hai
         uses: actions/upload-artifact@v4
         with:
           name: app-release
