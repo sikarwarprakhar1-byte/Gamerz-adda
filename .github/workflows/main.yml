@@ -1,4 +1,4 @@
-# flutter-build.yml
+# main.yml (Isko poori tarah copy-paste karein)
 
 name: Flutter Build APK
 
@@ -19,6 +19,7 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
+          # Yahan woh version likhein jo aapki 'pubspec.yaml' ke 'environment' mein hai
           flutter-version: '3.16.5' 
 
       - name: Get packages
@@ -32,3 +33,6 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Notify on completion (Optional)
+        run: echo "Build complete! Check the 'Actions' tab for the APK."
